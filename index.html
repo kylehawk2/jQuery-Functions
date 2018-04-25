@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuerry Functions</title>
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#click').click(function(){
+                alert('Hello World!')
+            })
+           $('#hide').click(function(){
+                $("#hide").hide()
+           })
+           $('#show').click(function(){
+               $("#hide").show()
+           })
+           $('#toggle').click(function(){
+                $("#hide").toggle()
+           })
+           $('#slidedown').click(function(){
+                $(".hidden").slideDown()
+           })
+           $('#slideup').click(function(){
+               $(".hidden2").slideUp()
+           })
+           $('#slidetoggle').click(function(){
+               $(".stoggle").slideToggle()
+           })
+           $('#fadein').click(function(){
+                $(".fade").fadeIn()
+           })
+           $('#fadeout').click(function(){
+                $(".fadeout").fadeOut()
+           })
+           $('#addclass').click(function(){
+                $("#addclass").addClass("red")
+           })
+           $('#before').click(function(){
+                $(".before").before("<h1>Yay!</h1>")
+           })
+           $('#after').click(function(){
+               $(".after").after("<h1>Woohoo!</h1>")
+           })
+           $('#append').click(function(){
+               $("#append").append("<span>This is a span tag</span>")
+           })
+           $('#html').click(function(){
+               $(".html").html("<h1>Yay!</h1>")
+           })
+           $('.attr').click(function(){
+	            var classVal = $("#attr").attr("class")
+			    $('#attr').append(classVal)
+		    })
+		    $('.attr2').click(function(){
+			    $("#attr").attr("class", "red")
+		    })
+            $('.val').click(function(){
+			console.log($("#val").val())
+		    })
+		    $('.val2').click(function(){
+			    $('#val').val("minh")
+		    })
+		    $('.text').click(function(){
+			    $("#text").text("hello")
+		    })
+		    var ele = $("#data")
+		    $.data(ele, "name", "minh")
+		    $('.data').click(function(){
+			    var value = $.data(ele,"name")
+			    $("#data").after(value)
+		    })
+	    })
+    </script>
+    <style type="text/css">
+        .red {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button id="click">Click Me!</button>
+    <button id="hide">Click this Button to hide</button>
+    <button id="show">Click to Reveal Previous Button</button>
+    <button id="toggle">Click to show/hide Button</button>
+    <button id="slidedown">Click to Slide Down</button>
+    <p class="hidden" hidden>I was lost; Now I'm found!</p>
+    <button id="slideup">Click to Slide Up</button>
+    <p class="hidden2">I was lost; Now I'm found!...again</p>
+    <button id="slidetoggle">Click to Slide Toggle</button>
+    <p class="stoggle">Toggle Slide</p>
+    <button id="fadein">Fade In</button>
+    <p class="fade" hidden>Watch me Fade In!</p>
+    <button id="fadeout">Fade Out</button>
+    <p class="fadeout">Watch me Fade Out!</p>
+    <button id="addclass">Click to add Class</button>
+    <button id="before">Click to add before p tag</button>
+    <p class="before">This is an h1 tag added before me</p>
+    <button id="after">Click this to add p tag after me</button>
+    <p class="after">This is an h1 tag added after me</p>
+    <button id="append">Click this button to append</button>
+    <button id="html">Click to replace HTML</button>
+    <p class="html">Html will be added to this p tag</p>
+    <p class="green" id="attr">I am a p tag with the class of green. Class=</p>
+	<button class="attr">Click to retreive the class</button>
+    <button class="attr2">click to change the class attribute to red</button>
+    <input type="text" name="name" id="val">
+	<button class="val">Click to retreive the value of the input. Look in your console</button>
+    <button class="val2">click to change the value of the input to "minh"</button>
+    <p>replace the text of an element</p>
+    <p id="text">My text will be replaced</p>
+    <button class="text">Click to replace the text with "hello"</button>
+    <p id="data">I have a name hidden in me. What is it?</p>
+    <button class="data">Click to retreive the data</button>
+</html>
